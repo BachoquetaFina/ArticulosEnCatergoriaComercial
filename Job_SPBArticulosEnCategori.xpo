@@ -1,0 +1,38 @@
+﻿Exportfile for AOT version 1.0 or later
+Formatversion: 1
+
+***Element: JOB
+
+; Microsoft Dynamics AX Job: SPBArticulosEnCategori descargados
+; --------------------------------------------------------------------------------
+  JOBVERSION 1
+  
+  SOURCE #SPBArticulosEnCategori
+    #//Susana Palanca
+    #static void SPBArticulosEnCategori(Args _args)
+    #{
+    #
+    #    Query                                   query;
+    #    QueryRun                                queryRun;
+    #    EcoResProduct                           ecoResProduct;
+    #    InventTable                             inventTable;
+    #
+    #
+    #    query = RetailGroupMemberLineQueryProvider::containedProductsQuery(5637147670,true);
+    #
+    #    queryRun = new queryRun(query);
+    #
+    #    while (queryRun.next())
+    #    {
+    #       ecoResProduct = queryRun.get(tableNum(EcoResProduct));
+    #       info(inventTable::findByProduct(ecoResProduct.recid).itemName());
+    #    }
+    #
+    #}
+  ENDSOURCE
+  PROPERTIES
+    Origin              #{FDEFB622-CF7C-4DC9-B489-A4445466599D}
+  ENDPROPERTIES
+  
+
+***Element: END
